@@ -13,7 +13,11 @@ export function normalizeCharacterPayload(data: any) {
     vehicles: data.vehicles ?? [],
     background_feature: data.background_feature ?? { name: "", desc: "" },
     lore: data.lore ?? "",
-    subclass: data.subclass ?? ""
+    subclass: data.subclass ?? "",
+    max_hp: data.max_hp ?? 10,
+    current_hp: data.current_hp ?? 10,
+    armor_class: data.armor_class ?? 10,
+    proficiency_bonus: data.proficiency_bonus ?? 2
   };
 }
 
