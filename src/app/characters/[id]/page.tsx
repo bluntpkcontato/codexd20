@@ -357,6 +357,24 @@ export default function CharacterSheetPage() {
       return next;
     });
   };
+  const rollDamage = (diceStr: string, source: string) => {
+    const parts = diceStr.toLowerCase().split('d');
+    const count = parseInt(parts[0]) || 1;
+    const sides = parseInt(parts[1]) || 6;
+    let total = 0;
+    for (let i = 0; i < count; i++) {
+      total += Math.floor(Math.random() * sides) + 1;
+    }
+    setRollLog(p => [{
+      label: `Dano (${source})`,
+      result: total,
+      modifier: 0,
+      sides: sides,
+      total: total,
+      isCrit: false,
+      isFail: false
+    }, ...p]);
+  };
 
   const roll = (sides: number, modifier: number = 0, label: string = "Rolagem", breakdown?: any) => {
     const result = sides > 0 ? Math.floor(Math.random() * sides) + 1 : 0;
@@ -1486,7 +1504,9 @@ export default function CharacterSheetPage() {
                     
                     {/* Dice Parser Buttons */}
                     {(() => {
-                      const diceMatches = Array.from(new Set(selectedSpell.description.match(/\b(\d+d\d+)\b/gi) || []));
+                      const regex = new RegExp("\\b(\\d+d\\d+)\\b", "gi");
+                      const matches = selectedSpell.description.match(regex);
+                      const diceMatches = Array.from(new Set(matches || []));
                       if (diceMatches.length > 0) {
                         return (
                           <div className="flex flex-wrap gap-2 mb-3 bg-red-950/20 p-2 rounded-xl border border-red-500/20">
@@ -1543,6 +1563,7 @@ export default function CharacterSheetPage() {
                       )}
                     </div>
                   </div>
+                </div>
               ) : (
                 <div className="text-center py-12 text-gray-500 text-xs">
                   <Scroll className="w-8 h-8 mx-auto mb-2 opacity-30" />

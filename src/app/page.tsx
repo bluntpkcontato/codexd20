@@ -13,7 +13,7 @@ export default function LandingPage() {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => setMounted(true), 0);
-    supabase.auth.getSession().then((res) => {
+    supabase.auth.getSession().then((res: any) => {
       if (res?.data?.session) router.push("/dashboard");
     });
     return () => clearTimeout(timeoutId);

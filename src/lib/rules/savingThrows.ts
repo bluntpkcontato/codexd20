@@ -38,7 +38,7 @@ export function calculateSavingThrowBonus(character: any, abilityKey: string, ex
   const classSaves = CLASS_SAVING_THROWS[charClass] || [];
   const charSaves = character?.stats?.saving_throws || character?.saving_throws || classSaves;
   
-  const isProficient = charSaves.some(s => s.toLowerCase() === abilityKey.toLowerCase());
+  const isProficient = charSaves.some((s: string) => s.toLowerCase() === abilityKey.toLowerCase());
   const profBonus = getProficiencyBonus(character?.level || 1);
   
   return {

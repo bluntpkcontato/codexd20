@@ -25,7 +25,7 @@ export const fighterLvl1 = {
 };
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export const CLASS_SAVING_THROWS: Record<string, string[]> = {
+export const mockRogueWithExpertise: any = {
   name: "Ladino Nível 1 com Expertise",
   char_class: "Ladino",
   level: 1,
@@ -41,6 +41,21 @@ export const CLASS_SAVING_THROWS: Record<string, string[]> = {
   expertise: ["Furtividade"],
   saving_throws: ["DES", "INT"],
   inventory: []
+};
+
+export const CLASS_SAVING_THROWS: Record<string, string[]> = {
+  "Bárbaro": ["FOR", "CON"],
+  "Bardo": ["DES", "CAR"],
+  "Bruxo": ["SAB", "CAR"],
+  "Clérigo": ["SAB", "CAR"],
+  "Druida": ["INT", "SAB"],
+  "Feiticeiro": ["CON", "CAR"],
+  "Guerreiro": ["FOR", "CON"],
+  "Ladino": ["DES", "INT"],
+  "Mago": ["INT", "SAB"],
+  "Monge": ["FOR", "DES"],
+  "Paladino": ["SAB", "CAR"],
+  "Patrulheiro": ["FOR", "DES"]
 };
 
 export const rogueLvl1Expertise = {
