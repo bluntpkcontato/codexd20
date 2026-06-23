@@ -10,6 +10,7 @@ import {
   Sword, BookOpen, Dices, Star, ScrollText, 
   Plus, LogOut, Search, ChevronRight, Sparkles, X, Send, Bot, Trash2, Users 
 } from "lucide-react";
+import { generateRandomCharacterPayload } from "@/lib/rules/characterBuilder";
 import { getRacePresetImage } from "@/utils/racePresets";
 import { DndChatbot } from "@/components/DndChatbot";
 
@@ -227,7 +228,6 @@ export default function DashboardPage() {
   const router = useRouter();
   const [username, setUsername] = useState("Aventureiro");
   const [search, setSearch] = useState("");
-  const [isMigrating, setIsMigrating] = useState(false);
 
   // Dice Roller States
   const [diceRollLog, setDiceRollLog] = useState<{ die: string; result: number; critType: 'normal' | 'crit' | 'fail' }[]>([]);
@@ -277,66 +277,12 @@ export default function DashboardPage() {
     checkAuth();
   }, [router]);
 
-  const migrateData = async () => {
-    try {
-      setIsMigrating(true);
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) return;
-      
-      const localChars = localStorage.getItem("codex_mock_characters");
-      if (!localChars) {
-        alert("Nenhum personagem local encontrado para migrar!");
-        return;
-      }
-      
-      const parsedChars = JSON.parse(localChars);
-      if (parsedChars.length === 0) {
-        alert("Lista de personagens locais está vazia.");
-        return;
-      }
-
-      let count = 0;
-      for (const char of parsedChars) {
-        // Ignora id local e insere um novo, ou mantém se quiser. Manteremos nome e stats.
-        const { id, created_at, updated_at, user_id, ...charData } = char;
-        const { error } = await supabase.from("characters").insert([{
-          ...charData,
-          user_id: user.id
-        }]);
-        if (!error) count++;
-      }
-
-      alert(`Migração concluída! ${count} personagens transferidos para a nuvem.`);
-      localStorage.removeItem("codex_mock_characters");
-      window.location.reload();
-    } catch (e: any) {
-      alert("Erro na migração: " + e.message);
-    } finally {
-      setIsMigrating(false);
-    }
-  };
-
   const generateRandomCharacter = async () => {
     try {
       const { data: authData } = await supabase.auth.getUser();
       if (!authData?.user) return;
       
-      const races = ["Humano", "Elfo", "Anão", "Halfling", "Draconato", "Tiefling"];
-      const classes = ["Guerreiro", "Mago", "Ladino", "Clérigo", "Bárbaro", "Bardo"];
-      const names = ["Theren", "Kael", "Lyra", "Grim", "Sariel", "Rurik"];
-      
-      const randomItem = (arr: any[]) => arr[Math.floor(Math.random() * arr.length)];
-      
-      const newChar = {
-        name: randomItem(names) + " (Aleatório)",
-        race: randomItem(races),
-        char_class: randomItem(classes),
-        level: 1,
-        stats: { FOR: 15, DES: 14, CON: 13, INT: 12, SAB: 10, CAR: 8 },
-        max_hp: 12,
-        current_hp: 12,
-        user_id: authData.user.id
-      };
+      const newChar = generateRandomCharacterPayload(authData.user.id);
       
       const { data, error } = await supabase.from("characters").insert([newChar]).select();
       if (error) throw error;

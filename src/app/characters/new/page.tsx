@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { supabase } from "@/lib/supabase";
 import { getRacePresetImage, PRESET_PORTRAITS, getClassPresetImage } from "@/utils/racePresets";
 import { validatePointBuy, hasSpellbook } from "@/utils/dndMath";
+import { normalizeCharacterPayload } from "@/lib/rules/characterBuilder";
 
 // Import processed D&D datasets
 import classesData from "@/data/classes_pt.json";
@@ -106,6 +107,70 @@ const RACE_DETAILS_ENRICHMENT: Record<string, { quote: string; lore: string; tra
     traits: [
       { name: "Proteção Integrada", desc: "+1 de bônus permanente na Classe de Armadura (CA)." },
       { name: "Resiliência do Construto", desc: "Imunidade a doenças, vantagem contra veneno e não precisa dormir, comer ou respirar." }
+    ]
+  },
+  "Golias": {
+    quote: "“A montanha não se curva à tempestade, ela a suporta. Assim é o nosso povo.”",
+    lore: "Gigantes das montanhas frias, os Golias possuem força brutal e espírito de competição. Suas tribos valorizam a autossuficiência e a resistência física acima de tudo.",
+    traits: [
+      { name: "Resistência da Pedra", desc: "Use sua reação para reduzir o dano sofrido em 1d12 + modificador de Constituição." },
+      { name: "Poderoso", desc: "Conta como uma categoria de tamanho maior para determinar capacidade de carga." }
+    ]
+  },
+  "Orc": {
+    quote: "“A força bruta é a única linguagem que todos os reinos entendem perfeitamente.”",
+    lore: "Poderosos e orgulhosos guerreiros de força física inabalável, frequentemente temidos mas dotados de profunda honra tribal e coragem.",
+    traits: [
+      { name: "Investida Agressiva", desc: "Pode se mover até seu deslocamento em direção a um inimigo como uma ação bônus." },
+      { name: "Poder Físico", desc: "Proficiência na perícia Intimidação e capacidade de carga ampliada." }
+    ]
+  },
+  "Meio-Elfo": {
+    quote: "“Eu ando entre as árvores antigas e as ruas pavimentadas, mas não pertenço totalmente a nenhuma.”",
+    lore: "Unindo a longevidade e a graça dos elfos com a versatilidade e a ambição humana, são excelentes em diplomacia e artes arcanas.",
+    traits: [
+      { name: "Versatilidade", desc: "Proficiência em duas perícias adicionais à sua escolha." },
+      { name: "Ancestralidade Feérica", desc: "Vantagem contra ser encantado e imunidade a magia de sono." }
+    ]
+  },
+  "Tabaxi": {
+    quote: "“Curiosidade não matou este gato, ela apenas lhe deu asas e histórias para contar.”",
+    lore: "Ágeis felinos antropomórficos movidos pela curiosidade inesgotável e velocidade, caçadores de lendas perdidas e relíquias misteriosas.",
+    traits: [
+      { name: "Agilidade Felina", desc: "Pode dobrar seu deslocamento por um turno (recarrega ao ficar parado)." },
+      { name: "Garras", desc: "Seus ataques desarmados causam dano cortante." }
+    ]
+  },
+  "Aarakocra": {
+    quote: "“Os céus são o meu reino. A terra é apenas o lugar onde descanso as minhas asas.”",
+    lore: "Povo alado dos picos elevados, nativos do Plano Elemental do Ar, são velozes e sentem fobia de lugares apertados ou masmorras profundas.",
+    traits: [
+      { name: "Voo", desc: "Você possui velocidade de voo de 15 metros, desde que não use armadura média ou pesada." },
+      { name: "Garras Afiadas", desc: "Ataques desarmados causam 1d4 de dano cortante." }
+    ]
+  },
+  "Changeling": {
+    quote: "“Nenhum rosto é permanente, e cada máscara guarda o seu próprio segredo.”",
+    lore: "Mestres do disfarce, os Changeling podem alterar sua forma física à vontade, adotando as vozes e as faces de qualquer pessoa que encontrarem.",
+    traits: [
+      { name: "Aparência Fluida", desc: "Como ação, você pode mudar sua forma física e tamanho para combinar com outro humanoide." },
+      { name: "Instintos de Metamorfo", desc: "Proficiência em Enganação e Intuição." }
+    ]
+  },
+  "Dhampir": {
+    quote: "“A maldição corre em meu sangue, mas a escolha do que devorar é inteiramente minha.”",
+    lore: "Herdeiros da noite com apetite por sangue ou energia vital, os Dhampir caminham na fina linha entre o mundo dos vivos e a eternidade vampírica.",
+    traits: [
+      { name: "Andarilho das Trevas", desc: "Deslocamento de 10m e pode escalar paredes como uma aranha (sem usar as mãos)." },
+      { name: "Mordida Vampírica", desc: "Ataque corpo-a-corpo que restaura HP equivalente ao dano causado." }
+    ]
+  },
+  "Reborn": {
+    quote: "“Eu acordei num túmulo, sem memória, mas com uma certeza: a morte me rejeitou.”",
+    lore: "Almas que retornaram do limiar da morte através de magias sombrias ou propósitos inacabados, habitando corpos mortos-vivos costurados.",
+    traits: [
+      { name: "Natureza Imortal", desc: "Vantagem em testes de morte, e não precisa comer, beber ou respirar." },
+      { name: "Conhecimento de Vidas Passadas", desc: "Adiciona 1d6 a testes de perícias baseados em vagas memórias do passado." }
     ]
   }
 };
@@ -458,8 +523,8 @@ export default function CharacterWizard() {
       setError("Diga ao Tomo qual é o seu nome.");
       return;
     }
-    if (!validatePointBuy(baseStats)) {
-      setError("Todos os atributos base devem estar estritamente entre 8 e 15 na criação de personagens.");
+    if (genMethod === "point_buy" && !validatePointBuy(baseStats)) {
+      setError("No modo Compra de Pontos, todos os atributos base devem estar estritamente entre 8 e 15.");
       setStep(4);
       return;
     }
@@ -506,9 +571,11 @@ export default function CharacterWizard() {
         lore: aiLore || `Um ${selectedRace.name} ${selectedClass?.name} trilhando a sina de ${selectedBackground.name}.`
       };
 
+      const normalizedData = normalizeCharacterPayload(characterData);
+
       const { error: insertErr } = await supabase
         .from('characters')
-        .insert([characterData]);
+        .insert([normalizedData]);
 
       if (insertErr) throw insertErr;
 
