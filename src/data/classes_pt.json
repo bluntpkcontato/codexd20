@@ -1,0 +1,233 @@
+[
+  {
+    "id": "barbarian",
+    "name": "Bárbaro",
+    "hitDie": "d12",
+    "primaryStat": "FOR/DES",
+    "skillsCount": 2,
+    "skillsPool": [
+      "Adestrar Animais",
+      "Atletismo",
+      "Intimidação",
+      "Natureza",
+      "Percepção",
+      "Sobrevivência"
+    ],
+    "desc": "Classe lendária de D&D: Bárbaro"
+  },
+  {
+    "id": "bard",
+    "name": "Bardo",
+    "hitDie": "d8",
+    "primaryStat": "CAR",
+    "skillsCount": 3,
+    "skillsPool": [
+      "Acrobacia",
+      "Adestrar Animais",
+      "Arcanismo",
+      "Atletismo",
+      "Enganação",
+      "História",
+      "Intuição",
+      "Intimidação",
+      "Investigação",
+      "Medicina",
+      "Natureza",
+      "Percepção",
+      "Atuação",
+      "Persuasão",
+      "Religião",
+      "Prestidigitação",
+      "Furtividade",
+      "Sobrevivência"
+    ],
+    "desc": "Classe lendária de D&D: Bardo"
+  },
+  {
+    "id": "cleric",
+    "name": "Clérigo",
+    "hitDie": "d8",
+    "primaryStat": "SAB",
+    "skillsCount": 2,
+    "skillsPool": [
+      "História",
+      "Intuição",
+      "Medicina",
+      "Persuasão",
+      "Religião"
+    ],
+    "desc": "Classe lendária de D&D: Clérigo"
+  },
+  {
+    "id": "druid",
+    "name": "Druida",
+    "hitDie": "d8",
+    "primaryStat": "SAB",
+    "skillsCount": 2,
+    "skillsPool": [
+      "Arcanismo",
+      "Adestrar Animais",
+      "Intuição",
+      "Medicina",
+      "Natureza",
+      "Percepção",
+      "Religião",
+      "Sobrevivência"
+    ],
+    "desc": "Classe lendária de D&D: Druida"
+  },
+  {
+    "id": "fighter",
+    "name": "Guerreiro",
+    "hitDie": "d10",
+    "primaryStat": "FOR/DES",
+    "skillsCount": 2,
+    "skillsPool": [
+      "Acrobacia",
+      "Adestrar Animais",
+      "Atletismo",
+      "História",
+      "Intuição",
+      "Intimidação",
+      "Percepção",
+      "Sobrevivência"
+    ],
+    "desc": "Classe lendária de D&D: Guerreiro"
+  },
+  {
+    "id": "monk",
+    "name": "Monge",
+    "hitDie": "d8",
+    "primaryStat": "FOR/DES",
+    "skillsCount": 2,
+    "skillsPool": [
+      "Acrobacia",
+      "Atletismo",
+      "História",
+      "Intuição",
+      "Religião",
+      "Furtividade"
+    ],
+    "desc": "Classe lendária de D&D: Monge"
+  },
+  {
+    "id": "paladin",
+    "name": "Paladino",
+    "hitDie": "d10",
+    "primaryStat": "FOR/DES",
+    "skillsCount": 2,
+    "skillsPool": [
+      "Atletismo",
+      "Intuição",
+      "Intimidação",
+      "Medicina",
+      "Persuasão",
+      "Religião"
+    ],
+    "desc": "Classe lendária de D&D: Paladino"
+  },
+  {
+    "id": "ranger",
+    "name": "Patrulheiro",
+    "hitDie": "d10",
+    "primaryStat": "FOR/DES",
+    "skillsCount": 3,
+    "skillsPool": [
+      "Adestrar Animais",
+      "Atletismo",
+      "Intuição",
+      "Investigação",
+      "Natureza",
+      "Percepção",
+      "Furtividade",
+      "Sobrevivência"
+    ],
+    "desc": "Classe lendária de D&D: Patrulheiro"
+  },
+  {
+    "id": "rogue",
+    "name": "Ladino",
+    "hitDie": "d8",
+    "primaryStat": "FOR/DES",
+    "skillsCount": 4,
+    "skillsPool": [
+      "Acrobacia",
+      "Atletismo",
+      "Enganação",
+      "Intuição",
+      "Intimidação",
+      "Investigação",
+      "Percepção",
+      "Atuação",
+      "Persuasão",
+      "Prestidigitação",
+      "Furtividade"
+    ],
+    "desc": "Classe lendária de D&D: Ladino"
+  },
+  {
+    "id": "sorcerer",
+    "name": "Feiticeiro",
+    "hitDie": "d6",
+    "primaryStat": "CAR",
+    "skillsCount": 2,
+    "skillsPool": [
+      "Arcanismo",
+      "Enganação",
+      "Intuição",
+      "Intimidação",
+      "Persuasão",
+      "Religião"
+    ],
+    "desc": "Classe lendária de D&D: Feiticeiro"
+  },
+  {
+    "id": "warlock",
+    "name": "Bruxo",
+    "hitDie": "d8",
+    "primaryStat": "CAR",
+    "skillsCount": 2,
+    "skillsPool": [
+      "Arcanismo",
+      "Enganação",
+      "História",
+      "Intimidação",
+      "Investigação",
+      "Natureza",
+      "Religião"
+    ],
+    "desc": "Classe lendária de D&D: Bruxo"
+  },
+  {
+    "id": "wizard",
+    "name": "Mago",
+    "hitDie": "d6",
+    "primaryStat": "INT",
+    "skillsCount": 2,
+    "skillsPool": [
+      "Arcanismo",
+      "História",
+      "Intuição",
+      "Investigação",
+      "Medicina",
+      "Religião"
+    ],
+    "desc": "Classe lendária de D&D: Mago"
+  },
+  {
+    "id": "artificer",
+    "name": "Artífice",
+    "hitDie": "d8",
+    "primaryStat": "INT",
+    "skillsCount": 2,
+    "skillsPool": [
+      "Arcanismo",
+      "História",
+      "Investigação",
+      "Medicina",
+      "Natureza",
+      "Prestidigitação"
+    ],
+    "desc": "Mestre da invenção e do aprimoramento mágico, capaz de imbuir itens cotidianos com poder arcano."
+  }
+]

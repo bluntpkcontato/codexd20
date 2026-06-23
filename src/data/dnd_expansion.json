@@ -1,0 +1,180 @@
+{
+  "RACES": [
+    { "id": "humano", "name": "Humano", "emoji": "🧑", "desc": "Versáteis e ambiciosos, capazes de dominar qualquer trilha." },
+    { "id": "elfo", "name": "Elfo", "emoji": "🧝", "desc": "Refinados, longevos e profundamente conectados à magia da natureza." },
+    { "id": "anao", "name": "Anão", "emoji": "⛏️", "desc": "Resistentes como as rochas das montanhas onde esculpem suas lendas." },
+    { "id": "halfling", "name": "Halfling", "emoji": "🌻", "desc": "Pequenos e incrivelmente sortudos, amantes de comida e sossego." },
+    { "id": "gnomo", "name": "Gnomo", "emoji": "🔬", "desc": "Inventivos e curiosos gnomos engenheiros ou ilusionistas." },
+    { "id": "golias", "name": "Golias", "emoji": "🏔️", "desc": "Gigantes das montanhas frias, dotados de força bruta e resistência monumental." },
+    { "id": "orc", "name": "Orc", "emoji": "🐗", "desc": "Força indestrutível e orgulho marcial inabalável." },
+    { "id": "tiefling", "name": "Tiefling", "emoji": "😈", "desc": "Marcados por linhagens infernais, envoltos em chamas inatas." },
+    { "id": "draconato", "name": "Draconato", "emoji": "🐉", "desc": "Orgulhosos guerreiros de sangue dracônico elemental." },
+    { "id": "aasimar", "name": "Aasimar", "emoji": "😇", "desc": "Tocados pelo plano celestial, portadores de asas de luz e cura divina." },
+    { "id": "meio-elfo", "name": "Meio-Elfo", "emoji": "🌗", "desc": "O melhor de dois mundos, unindo a adaptabilidade com o charme arcano." },
+    { "id": "meio-orc", "name": "Meio-Orc", "emoji": "💪", "desc": "Resistentes e guerreiros de força física incomparável." },
+    { "id": "warforged", "name": "Warforged", "emoji": "🤖", "desc": "Constructos vivos forjados para a guerra, blindados e incansáveis." },
+    { "id": "tabaxi", "name": "Tabaxi", "emoji": "🐱", "desc": "Ágeis felinos antropomórficos movidos pela curiosidade e velocidade." },
+    { "id": "aarakocra", "name": "Aarakocra", "emoji": "🦅", "desc": "Povo alado dos picos elevados, velozes mensageiros dos ventos." },
+    { "id": "changeling", "name": "Changeling", "emoji": "🎭", "desc": "Mestres do disfarce capazes de alterar sua forma física à vontade." },
+    { "id": "dhampir", "name": "Dhampir", "emoji": "🧛", "desc": "Herdeiros da noite com apetite por sangue e agilidade vampírica." },
+    { "id": "reborn", "name": "Reborn", "emoji": "💀", "desc": "Almas que retornaram do limiar da morte, suspensas entre a vida e o túmulo." },
+    { "id": "fada", "name": "Fada", "emoji": "🧚", "desc": "Pequenos seres feéricos dotados de asas e magia travessa inata." },
+    { "id": "goblin", "name": "Goblin", "emoji": "👺", "desc": "Astutos, velozes e especialistas em escapar de enrascadas." },
+    { "id": "kobold", "name": "Kobold", "emoji": "🦎", "desc": "Pequenos répteis engenhosos com forte instinto de matilha." },
+    { "id": "kenku", "name": "Kenku", "emoji": "🐦", "desc": "Corvos antropomórficos amaldiçoados, mestres da mímica e falsificação." },
+    { "id": "tritao", "name": "Tritão", "emoji": "🧜‍♂️", "desc": "Guardiões do oceano profundo com controle sobre as águas e frio." },
+    { "id": "tortle", "name": "Tortle", "emoji": "🐢", "desc": "Viajantes reptilianos pacíficos que carregam uma carapaça protetora rígida." },
+    { "id": "leonin", "name": "Leonin", "emoji": "🦁", "desc": "Orgulhosos guerreiros felinos com rugidos aterrorizantes." },
+    { "id": "satyr", "name": "Sátiro", "emoji": "🐐", "desc": "Espíritos livres das festas feéricas, ágeis e resistentes à magia." },
+    { "id": "harengon", "name": "Harengon", "emoji": "🐇", "desc": "Povo coelho saltador com reflexos extraordinários." },
+    { "id": "loxodon", "name": "Loxodon", "emoji": "🐘", "desc": "Povo elefante calmo, pacífico e com constituição de pedra." },
+    { "id": "yuan-ti", "name": "Yuan-ti", "emoji": "🐍", "desc": "Herdeiros das serpentes com resistência mágica e veneno inato." },
+    { "id": "genasi", "name": "Genasi", "emoji": "🌀", "desc": "Tocados pelo poder dos planos elementais (Fogo, Terra, Água ou Ar)." },
+    { "id": "githyanki", "name": "Githyanki", "emoji": "👽", "desc": "Guerreiros astrais focados em caçar devoradores de mentes." },
+    { "id": "githzerai", "name": "Githzerai", "emoji": "🧠", "desc": "Filósofos ascetas com defesas psíquicas inabaláveis." },
+    { "id": "plasmoid", "name": "Plasmoide", "emoji": "💧", "desc": "Amorfo gelatinoso capaz de se espremer por frestas e moldar membros." },
+    { "id": "thri-kreen", "name": "Thri-kreen", "emoji": "🦗", "desc": "Insetoides de quatro braços, carapaça camaleônica e sem sono." },
+    { "id": "owlin", "name": "Owlin", "emoji": "🦉", "desc": "Povo coruja com voo silencioso e visão noturna impecável." },
+    { "id": "shifter", "name": "Shifter", "emoji": "🐺", "desc": "Licantropos menores capazes de assumir feições bestiais em combate." },
+    { "id": "kalashtar", "name": "Kalashtar", "emoji": "💎", "desc": "Híbridos humanos ligados a espíritos do plano dos sonhos." },
+    { "id": "centauro", "name": "Centauro", "emoji": "🐎", "desc": "Espírito indomável com a potência de uma fera veloz." },
+    { "id": "minotauro", "name": "Minotauro", "emoji": "🐂", "desc": "Guerreiros labirínticos focados em chifradas devastadoras." },
+    { "id": "firbolg", "name": "Firbolg", "emoji": "🌳", "desc": "Gigantes gentis da floresta com camuflagem mágica natural." },
+    { "id": "bugbear", "name": "Bugbear", "emoji": "🐻", "desc": "Grandes e esguios predadores com alcance físico aprimorado." },
+    { "id": "hobgoblin", "name": "Hobgoblin", "emoji": "🛡️", "desc": "Táticos marciais focados no trabalho em equipe e orgulho militar." }
+  ],
+  "SUBRACES": {
+    "Humano": [
+      { "id": "humano_padrao", "name": "Humano Padrão", "bonus": { "FOR": 1, "DES": 1, "CON": 1, "INT": 1, "SAB": 1, "CAR": 1 }, "traits": ["+1 em todos os atributos", "Idioma Extra"], "desc": "Versatilidade e equilíbrio em todas as frentes." },
+      { "id": "humano_variante", "name": "Humano Variante", "bonus": { "CON": 1, "DES": 1 }, "traits": ["+1 em dois atributos", "Proficiência extra", "Talento ao Nível 1"], "desc": "Especialização focada em um talento singular." }
+    ],
+    "Elfo": [
+      { "id": "alto_elfo", "name": "Alto Elfo", "bonus": { "INT": 1 }, "traits": ["+1 Inteligência", "Treinamento com Armas Élfiças", "1 Truque de Mago à escolha"], "desc": "Estudiosos e aristocráticos, dominando magia básica." },
+      { "id": "elfo_floresta", "name": "Elfo da Floresta", "bonus": { "SAB": 1 }, "traits": ["+1 Sabedoria", "Pés Ligeiros (+1.5m deslocamento)", "Máscara da Natureza"], "desc": "Ágeis caçadores das matas profundas." },
+      { "id": "drow", "name": "Drow (Elfo Negro)", "bonus": { "CAR": 1 }, "traits": ["+1 Carisma", "Visão no Escuro Superior (24m)", "Magia Drow inata"], "desc": "Habitantes do Subterrâneo dotados de carisma perigoso." }
+    ],
+    "Anão": [
+      { "id": "anao_colina", "name": "Anão da Colina", "bonus": { "SAB": 1 }, "traits": ["+1 Sabedoria", "Robustez Anã (+1 HP por nível)", "Visão no Escuro 18m"], "desc": "Sábios artesãos com resistência física extraordinária." },
+      { "id": "anao_montanha", "name": "Anão da Montanha", "bonus": { "FOR": 2 }, "traits": ["+2 Força", "Treinamento com Armaduras Leves/Médias"], "desc": "Guerreiros robustos que vivem no coração das rochas." }
+    ],
+    "Halfling": [
+      { "id": "halfling_pes_leves", "name": "Pés-Leves", "bonus": { "CAR": 1 }, "traits": ["+1 Carisma", "Furtividade Natural"], "desc": "Extremamente sociais e difíceis de rastrear." },
+      { "id": "halfling_robusto", "name": "Robusto", "bonus": { "CON": 1 }, "traits": ["+1 Constituição", "Resistência contra Veneno"], "desc": "Resistentes a toxinas e fisicamente resilientes." }
+    ],
+    "Gnomo": [
+      { "id": "gnomo_floresta", "name": "Gnomo da Floresta", "bonus": { "DES": 1 }, "traits": ["+1 Destreza", "Ilusionista Natural", "Falar com Feras Pequenas"], "desc": "Amigáveis e adaptados à vida nas florestas densas." },
+      { "id": "gnomo_rocha", "name": "Gnomo da Rocha", "bonus": { "CON": 1 }, "traits": ["+1 Constituição", "Conhecimento de Artífice", "Geringonça Mecânica"], "desc": "Engenhosos construtores de relógios e inventores." }
+    ],
+    "Golias": [
+      { "id": "golias_padrao", "name": "Golias das Alturas", "bonus": { "FOR": 2, "CON": 1 }, "traits": ["Resistência de Pedra (Reduz dano por 1d12 + CON)", "Constituição Poderosa"], "desc": "Nascido nas montanhas, adaptado ao ar rarefeito e frio." }
+    ],
+    "Orc": [
+      { "id": "orc_padrao", "name": "Orc da Tribo", "bonus": { "FOR": 2, "CON": 1 }, "traits": ["Investida Adrenalina", "Constituição Poderosa", "Fúria Resoluta"], "desc": "Força implacável motivada por deuses da guerra." }
+    ],
+    "Tiefling": [
+      { "id": "tiefling_asmodeus", "name": "Linhagem de Asmodeus", "bonus": { "INT": 1, "CAR": 2 }, "traits": ["Resistência a Fogo", "Truque Taumaturgia inato"], "desc": "Linhagem clássica ligada ao lorde supremo dos infernos." },
+      { "id": "tiefling_mephisto", "name": "Linhagem de Mefistófeles", "bonus": { "INT": 1, "CAR": 2 }, "traits": ["Resistência a Fogo", "Truque Mãos Mágicas inato"], "desc": "Estudiosos da manipulação da energia elemental de fogo." }
+    ],
+    "Draconato": [
+      { "id": "dragao_vermelho", "name": "Ascendência Vermelha (Fogo)", "bonus": { "FOR": 2, "CAR": 1 }, "traits": ["Resistência a Fogo", "Sopro de Fogo (Cone 4.5m)"], "desc": "Carrega o calor e o poder destruidor dos dragões vermelhos." },
+      { "id": "dragao_azul", "name": "Ascendência Azul (Eletricidade)", "bonus": { "FOR": 2, "CAR": 1 }, "traits": ["Resistência a Elétrico", "Sopro de Eletricidade (Linha 9m)"], "desc": "Conduz o choque fulminante dos dragões azuis." }
+    ],
+    "Aasimar": [
+      { "id": "aasimar_protetor", "name": "Aasimar Protetor", "bonus": { "CAR": 2, "SAB": 1 }, "traits": ["Mãos Curadoras", "Resistência Radiante/Necrótica", "Alma Radiante (Asas de Luz e Voo)"], "desc": "Guerreiros divinos focados na salvação e cura." }
+    ],
+    "Meio-Elfo": [
+      { "id": "meio_elfo_padrao", "name": "Meio-Elfo Clássico", "bonus": { "CAR": 2, "DES": 1, "CON": 1 }, "traits": ["Versatilidade em Perícias (2 perícias à escolha)"], "desc": "Reúne a graça élfica com a ambição adaptável humana." }
+    ],
+    "Meio-Orc": [
+      { "id": "meio_orc_padrao", "name": "Meio-Orc Guerreiro", "bonus": { "FOR": 2, "CON": 1 }, "traits": ["Resistência Implacável", "Ataques Selvagens", "Visão no Escuro 18m"], "desc": "Combinação temível de fúria e resiliência sobrenatural." }
+    ],
+    "Warforged": [
+      { "id": "warforged_padrao", "name": "Warforged Sentinela", "bonus": { "CON": 2, "FOR": 1 }, "traits": ["Proteção Integrada (+1 CA fixa)", "Resiliência do Construto"], "desc": "Feito de madeira, chapa de aço e magia pura." }
+    ],
+    "Tabaxi": [
+      { "id": "tabaxi_padrao", "name": "Tabaxi Caçador", "bonus": { "DES": 2, "CAR": 1 }, "traits": ["Agilidade Felina (dobra velocidade)", "Garras Gato", "Instintos de Gato"], "desc": "Velozes e cheios de truques." }
+    ],
+    "Centauro": [
+      { "id": "centauro_padrao", "name": "Centauro Selvagem", "bonus": { "FOR": 2, "SAB": 1 }, "traits": ["Deslocamento 12m", "Cascos (1d6 + FOR)", "Investida"], "desc": "Espírito indomável com a potência de uma fera veloz." }
+    ],
+    "Tortle": [
+      { "id": "tortle_padrao", "name": "Tortle Defensor", "bonus": { "FOR": 2, "SAB": 1 }, "traits": ["Casca Dura (CA Base 17 fixa)", "Garras (1d4)", "Prender Fôlego (1 hora)"], "desc": "Sábios e pacíficos guerreiros com blindagem natural." }
+    ]
+  },
+  "SUBCLASSES": {
+    "Guerreiro": [
+      { "name": "Campeão", "traits": ["Crítico Aprimorado (19-20)", "Vigor Notável"], "desc": "Força física pura e letalidade marcial extrema." },
+      { "name": "Mestre de Batalha", "traits": ["Dados de Superioridade", "Manobras marciais"], "desc": "Tático de combate versado em derrubar, desarmar e flanquear." },
+      { "name": "Cavaleiro Arcano", "traits": ["Magias Arcanas", "Elo de Arma"], "desc": "Fusão perfeita de espada de aço e feitiços arcanos." },
+      { "name": "Cavaleiro Rúnico", "traits": ["Inscrições de Runas", "Gigantismo Mágico"], "desc": "Canaliza as runas gigantes para aumentar seu tamanho e força." },
+      { "name": "Samurai", "traits": ["Espírito de Luta", "Cortes Elegantes"], "desc": "Determinação inabalável focada em ataques velozes e precisos." },
+      { "name": "Cavaleiro Psiônico", "traits": ["Poderes Telecinéticos", "Golpes Psiônicos"], "desc": "Utiliza energia mental para se defender e desferir golpes à distância." },
+      { "name": "Eco Knight", "traits": ["Eco Temporal", "Transposição de Sombras"], "desc": "Invoca manifestações de linhas temporais alternativas para lutar ao seu lado." }
+    ],
+    "Mago": [
+      { "name": "Abjuração", "traits": ["Envoltório Arcano", "Abjuração Projetada"], "desc": "Mestre das barreiras protetoras e selamentos mágicos." },
+      { "name": "Adivinhação", "traits": ["Augúrio Notável (Portento)", "Terceiro Olho"], "desc": "Vê o futuro e altera o destino rolando dados de antemão." },
+      { "name": "Conjuração", "traits": ["Conjuração Menor", "Translocação Benigna"], "desc": "Materializa objetos do nada e invoca criaturas dos planos." },
+      { "name": "Encantamento", "traits": ["Olhar Hipnótico", "Encantamento Dividido"], "desc": "Dobra a mente de inimigos com palavras e olhares doces." },
+      { "name": "Evocação", "traits": ["Esculpir Feitiços", "Evocação Potencializada"], "desc": "Cria explosões mágicas massivas sem ferir seus aliados próximos." },
+      { "name": "Ilusão", "traits": ["Ilusão Menor Melhorada", "Ilusões Maleáveis"], "desc": "Engana os sentidos projetando imagens e sons tridimensionais." },
+      { "name": "Necromancia", "traits": ["Colheita Sombria", "Servos Mortos-Vivos"], "desc": "Manipula a energia vital e ergue exércitos de esqueletos." },
+      { "name": "Transmutação", "traits": ["Alquimia Menor", "Pedra do Transmutador"], "desc": "Altera as propriedades da matéria física à sua vontade." },
+      { "name": "Canto das Lâminas", "traits": ["Canção da Lâmina", "Treinamento Cantora"], "desc": "Magos elfos marciais que combinam esgrima ágil com magia." }
+    ],
+    "Bárbaro": [
+      { "name": "Caminho do Berserker", "traits": ["Frenesi", "Fúria Desalmada"], "desc": "Entrega total à fúria com ataques extras massivos." },
+      { "name": "Caminho do Coração Selvagem", "traits": ["Aspecto de Fera", "Comunhão Totêmica"], "desc": "Invoca o espírito protetor do Urso, Águia ou Lobo." },
+      { "name": "Caminho da Besta", "traits": ["Garras/Mordida Selvagem", "Salto Bestial"], "desc": "Sofre mutações físicas assumindo feições e armas de uma fera." },
+      { "name": "Caminho do Gigante", "traits": ["Crescimento Elemental", "Arremesso Poderoso"], "desc": "Cresce ao tamanho de gigantes imbuindo sua arma com elementos cósmicos." }
+    ],
+    "Bardo": [
+      { "name": "Colégio do Conhecimento", "traits": ["Segredos Mágicos", "Palavras Cortantes"], "desc": "Colecionador de segredos e magias de todas as classes." },
+      { "name": "Colégio da Bravura", "traits": ["Inspiração de Combate", "Ataque Extra"], "desc": "Bardos guerreiros cantando contos de glória no front." },
+      { "name": "Colégio das Espadas", "traits": ["Florescer Marcial", "Estilo de Duelo"], "desc": "Malabaristas de lâminas ágeis com truques acrobáticos." }
+    ],
+    "Clérigo": [
+      { "name": "Domínio da Vida", "traits": ["Discípulo da Vida", "Cura Suprema"], "desc": "Foco absoluto em preservar a vida dos aliados." },
+      { "name": "Domínio da Luz", "traits": ["Clarão Radiante", "Corona de Chamas"], "desc": "Queima as sombras invocando chamas solares purificadoras." },
+      { "name": "Domínio da Guerra", "traits": ["Ataque do Sacerdote", "Golpe Guiado"], "desc": "Clérigos marciais portando martelos de guerra e armadura de placas." },
+      { "name": "Domínio da Tempestade", "traits": ["Ira da Tempestade", "Fúria Destrutiva"], "desc": "Conduz o poder devastador dos raios e trovões." },
+      { "name": "Domínio do Crepúsculo", "traits": ["Aura do Crepúsculo", "Olhos da Noite"], "desc": "Oferece santuário e proteção nas sombras e passagens." }
+    ],
+    "Druida": [
+      { "name": "Círculo da Lua", "traits": ["Forma Selvagem de Combate", "Formas Elementais"], "desc": "Transforma-se rapidamente em feras lendárias e elementais." },
+      { "name": "Círculo da Terra", "traits": ["Recuperação Natural", "Sintonia Terrena"], "desc": "Guardião da magia dos biomas e florestas profundas." },
+      { "name": "Círculo das Estrelas", "traits": ["Forma Estrelada", "Mapa Cósmico"], "desc": "Canaliza as constelações para guiar curas e tiros de luz." }
+    ],
+    "Feiticeiro": [
+      { "name": "Linhagem Dracônica", "traits": ["Resistência Dracônica", "Asas Dracônicas"], "desc": "Sangue dracônico conferindo escamas duras e sopro elemental." },
+      { "name": "Magia Selvagem", "traits": ["Surto Selvagem", "Maré de Caos"], "desc": "Magia caótica instável gerando efeitos imprevisíveis." },
+      { "name": "Mente Aberrante", "traits": ["Defesas Psíquicas", "Conjuração Psíquica"], "desc": "Poder psíquico oriundo do Reino Distante e de contatos alienígenas." }
+    ],
+    "Bruxo": [
+      { "name": "O Corruptor (Fiend)", "traits": ["Bênção do Sombrio", "Passo no Inferno"], "desc": "Pacto selado com demônios focado em destruição por fogo." },
+      { "name": "O Grande Antigo", "traits": ["Telepatia Desperta", "Escudo Mental"], "desc": "Ligado a entidades de loucura de além das estrelas." },
+      { "name": "A Lâmina Maldita (Hexblade)", "traits": ["Maldição da Lâmina", "Guerreiro do Pacto"], "desc": "Guerreiro conjurador cujas armas contêm espíritos sombrios." }
+    ],
+    "Monge": [
+      { "name": "Caminho da Mão Aberta", "traits": ["Rajada de Golpes Controladora", "Integridade Física"], "desc": "Especialista em derrubar, empurrar e atordoar com os punhos." },
+      { "name": "Caminho das Sombras", "traits": ["Passo das Sombras", "Artes da Sombra"], "desc": "Guerreiros silenciosos movendo-se pelas sombras." },
+      { "name": "Caminho da Misericórdia", "traits": ["Toque de Cura", "Toque de Dano"], "desc": "Manipula a força vital para curar aliados ou sugar inimigos." }
+    ],
+    "Paladino": [
+      { "name": "Juramento da Devoção", "traits": ["Arma Sagrada", "Aura da Devoção"], "desc": "O campeão clássico da luz, justiça e honra inabalável." },
+      { "name": "Juramento dos Antigos", "traits": ["Ira da Natureza", "Aura de Proteção Feérica"], "desc": "Jurado a defender a luz da beleza e da vida natural." },
+      { "name": "Juramento da Vingança", "traits": ["Voto de Inimizade", "Perseguidor Implacável"], "desc": "Focado unicamente em caçar e destruir os culpados." }
+    ],
+    "Patrulheiro": [
+      { "name": "Caçador", "traits": ["Presa do Colosso", "Defesa contra Horda"], "desc": "Sentinela de fronteiras focada em caçar feras colossais." },
+      { "name": "Mestre das Feras", "traits": ["Companheiro Primal", "Ataque Sincronizado"], "desc": "Luta lado a lado com uma fera selvagem imbuída de poder." },
+      { "name": "Perseguidor Sombrio", "traits": ["Visão Umbral", "Emboscardor Ambicioso"], "desc": "Especialista em lutar no escuro profundo do subterrâneo." }
+    ],
+    "Artífice": [
+      { "name": "Alquimista", "traits": ["Elixir Experimental", "Alquimista Restaurador"], "desc": "Cria poções mágicas voláteis e elixires curativos." },
+      { "name": "Artilheiro", "traits": ["Canhão Arcana", "Arma de Fogo de Defesa"], "desc": "Invoca torres canhões automáticas e armas balísticas elementais." },
+      { "name": "Ferreiro de Batalha", "traits": ["Defensor de Aço", "Canalizar Poder"], "desc": "Luta ao lado de um guardião mecânico e manipula armas arcanas." },
+      { "name": "Armeiro", "traits": ["Armadura de Combate", "Canhões de Pulso / Punhos de Trovão"], "desc": "Forja uma armadura mágica motorizada que serve como arma e barreira." }
+    ]
+  }
+}
