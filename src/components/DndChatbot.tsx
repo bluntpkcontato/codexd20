@@ -13,7 +13,8 @@ export function DndChatbot({ characterContext }: { characterContext?: string }) 
     api: '/api/chat',
     body: {
       characterContext
-    }
+    },
+    streamProtocol: 'text'
   } as any);
 
   useEffect(() => {

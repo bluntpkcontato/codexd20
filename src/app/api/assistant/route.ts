@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import { google } from '@ai-sdk/google';
+import { generateText } from 'ai';
 
 const SYSTEM_PROMPT = `Você é o Master Assistant do CODEX D20, um Dungeon Master veterano e carismático.
 Aja como um mentor, use citações sobre destino, perigo e heroísmo. 
@@ -128,41 +130,26 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Invalid messages format' }, { status: 400 });
     }
 
-    const apiKey = process.env.AI_TEXT_API_KEY;
+    const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
     
-    if (!apiKey || apiKey.trim() === "" || apiKey === "your-text-ai-key-here") {
-      const lastUserMessage = messages[messages.length - 1]?.content || "";
-      const systemMessage = messages.find((m: any) => m.role === "system")?.content || "";
-      const simulatedReply = generateThematicMockResponse(lastUserMessage, systemMessage);
-      
+    if (!apiKey || apiKey.trim() === "") {
+      // Improved mock that parses the prompt
+      const sysMsg = messages[0]?.content || "";
+      const nameMatch = sysMsg.match(/personagem ([^,]+)/i);
+      const name = nameMatch ? nameMatch[1] : "Herói";
       return NextResponse.json({ 
-        reply: simulatedReply 
+        reply: `A fogueira estala, revelando o rosto marcado de ${name}. Seus olhos carregam o peso das antigas profecias, e o aço em sua cintura clama pelo sangue dos injustos. O Códice não tem as chaves mágicas (API Key) para ver todo o seu futuro, mas os deuses sabem que sua lenda será eterna.`
       });
     }
 
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: 'gpt-4o', 
-        messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
-          ...messages
-        ],
-        temperature: 0.7,
-        response_format: req.url.includes("json") ? { type: "json_object" } : { type: "text" }
-      }),
+    const result = await generateText({
+      model: google('gemini-2.0-flash'),
+      system: SYSTEM_PROMPT,
+      messages: messages,
+      temperature: 0.8,
     });
 
-    if (!response.ok) {
-      throw new Error(`API error: ${response.statusText}`);
-    }
-
-    const data = await response.json();
-    return NextResponse.json({ reply: data.choices[0].message.content });
+    return NextResponse.json({ reply: result.text });
     
   } catch (error: any) {
     console.error("Master Assistant Error:", error.message);

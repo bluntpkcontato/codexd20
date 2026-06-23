@@ -46,9 +46,8 @@ export async function POST(req: Request) {
     const geminiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
 
     if (!geminiKey || geminiKey.trim() === "") {
-      // Fallback: resposta simples sem IA
       return new Response(
-        `0:${JSON.stringify("⚠️ Nenhuma chave de API configurada. Adicione GOOGLE_GENERATIVE_AI_API_KEY no arquivo .env.local para ativar o Sábio Códice.")}\n`,
+        "⚠️ Nenhuma chave de API configurada. Adicione GOOGLE_GENERATIVE_AI_API_KEY no arquivo .env.local para ativar o Sábio Códice.",
         { headers: { 'Content-Type': 'text/plain; charset=utf-8' } }
       );
     }
